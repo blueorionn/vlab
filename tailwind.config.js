@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./cinexa/templates/**/*.html'],
+  content: ['./vlab/templates/**/*.html'],
   darkMode: 'selector',
   theme: {
     extend: {},
