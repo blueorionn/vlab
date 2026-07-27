@@ -1,0 +1,28 @@
+{
+  "name": "vlab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "watchCss": "npx tailwindcss -i ./vlab/static/styles/tailwind.css -o ./vlab/static/styles/style.css --watch",
+    "buildCss": "npx tailwindcss -i ./vlab/static/styles/tailwind.css -o ./vlab/static/styles/style.css --minify",
+    "format": "prettier --write \"**/*.{html,css,js,json}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueorionn/vlab.git"
+  },
+  "author": "Swadhin",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  }
+}
