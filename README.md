@@ -10,23 +10,24 @@ Unlike generic vulnerable applications, VLab focuses on vulnerabilities that I f
 
 ---
 
-## Current Vulnerabilities
+## Vulnerabilities
 
-The project will gradually include labs such as:
+The project will include the following labs:
 
-- Authentication Bypass
 - Broken Access Control
 - Insecure Direct Object Reference (IDOR)
+- Authentication Bypass
 - Server-Side Request Forgery (SSRF)
 - Command Injection
 - File Upload Vulnerabilities
-- Local File Inclusion (LFI)
-- Remote File Inclusion (RFI)
+- File Inclusion (Local & Remote)
 - Path Traversal
-- Open Redirect
 - JWT Vulnerabilities
 - Race Conditions
 - Business Logic Vulnerabilities
+- HTTP Request Smuggling
+- Web Cache Poisoning
+- Host Header Attacks
 
 ---
 
