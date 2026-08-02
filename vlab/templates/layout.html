@@ -51,11 +51,11 @@
           href="{{ url_for('core.index') }}"
           class="flex items-center gap-2 text-xl font-bold tracking-tight text-slate-900 dark:text-white"
         >
-          <span
-            class="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--clr-bs-green)] text-sm font-extrabold text-white"
-          >
-            V
-          </span>
+          <img
+            src="{{ url_for('static', filename='public/icons/logo.png') }}"
+            alt="VLab"
+            class="h-8 w-auto"
+          />
           <span>VLab</span>
         </a>
 
@@ -144,11 +144,11 @@
         >
           <!-- Brand -->
           <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-            <span
-              class="flex h-6 w-6 items-center justify-center rounded bg-[var(--clr-bs-green)] text-xs font-bold text-white"
-            >
-              V
-            </span>
+            <img
+              src="{{ url_for('static', filename='public/icons/logo.png') }}"
+              alt="VLab"
+              class="h-6 w-auto"
+            />
             <span>VLab &mdash; Learn Web Security by Breaking Things</span>
           </div>
 
