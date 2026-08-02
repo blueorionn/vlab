@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="VLab — A deliberately vulnerable web application built to practice, understand, and exploit real-world web vulnerabilities."
+    />
+    <meta name="color-scheme" content="light dark" />
+
+    <title>{% block title %}VLab{% endblock title %}</title>
+
+    <!-- Tailwind CSS (compiled) -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/style.css') }}"
+    />
+
+    <!-- Global Styles -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/global.css') }}"
+    />
+
+    <!-- Preconnect to Google Fonts for Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    {% block head %}{% endblock head %}
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100 transition-colors">
+    <!-- ===== Navigation ===== -->
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/80"
+    >
+      <nav
+        class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
+      >
+        <!-- Logo -->
+        <a
+          href="{{ url_for('core.index') }}"
+          class="flex items-center gap-2 text-xl font-bold tracking-tight text-slate-900 dark:text-white"
+        >
+          <span
+            class="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--clr-bs-green)] text-sm font-extrabold text-white"
+          >
+            V
+          </span>
+          <span>VLab</span>
+        </a>
+
+        <!-- Nav Links -->
+        <ul class="hidden items-center gap-6 text-sm font-medium sm:flex">
+          <li>
+            <a
+              href="{{ url_for('core.index') }}"
+              class="text-slate-600 transition-colors hover:text-[var(--clr-bs-green)] dark:text-slate-400 dark:hover:text-[var(--clr-bs-green)]"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#labs"
+              class="text-slate-600 transition-colors hover:text-[var(--clr-bs-green)] dark:text-slate-400 dark:hover:text-[var(--clr-bs-green)]"
+            >
+              Labs
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="text-slate-600 transition-colors hover:text-[var(--clr-bs-green)] dark:text-slate-400 dark:hover:text-[var(--clr-bs-green)]"
+            >
+              About
+            </a>
+          </li>
+        </ul>
+
+        <!-- Dark Mode Toggle (placeholder) -->
+        <button
+          type="button"
+          id="theme-toggle"
+          class="rounded-md p-2 text-slate-500 transition-colors hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800"
+          aria-label="Toggle dark mode"
+          title="Toggle dark mode"
+        >
+          <!-- Sun icon (shown in dark mode) -->
+          <svg
+            class="hidden h-5 w-5 dark:block"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.95l-.71.71M21 12h-1M4 12H3m16.66 7.66l-.71-.71M4.05 4.05l-.71-.71M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg
+            class="block h-5 w-5 dark:hidden"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ===== Main Content ===== -->
+    <main>
+      {% block content %}{% endblock content %}
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer
+      class="mt-16 border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900"
+    >
+      <div
+        class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8"
+      >
+        <div
+          class="flex flex-col items-center justify-between gap-4 sm:flex-row"
+        >
+          <!-- Brand -->
+          <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+            <span
+              class="flex h-6 w-6 items-center justify-center rounded bg-[var(--clr-bs-green)] text-xs font-bold text-white"
+            >
+              V
+            </span>
+            <span>VLab &mdash; Learn Web Security by Breaking Things</span>
+          </div>
+
+          <!-- Links -->
+          <div class="flex items-center gap-4 text-xs text-slate-400 dark:text-slate-500">
+            <a
+              href="https://github.com/blueorionn/vlab"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="transition-colors hover:text-[var(--clr-bs-green)]"
+            >
+              GitHub
+            </a>
+            <span aria-hidden="true">&middot;</span>
+            <span>&copy; {{ now().year if now else '2026' }} VLab</span>
+          </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <p
+          class="mt-4 text-center text-xs text-slate-400 dark:text-slate-600"
+        >
+          <strong>Disclaimer:</strong> This project is intentionally insecure.
+          Do not deploy on public-facing servers. For educational use only.
+        </p>
+      </div>
+    </footer>
+
+    <!-- ===== Theme Toggle Script ===== -->
+    <script>
+      (function () {
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Load saved preference or default to system
+        const saved = localStorage.getItem('vlab-theme');
+        const prefersDark = window.matchMedia(
+          '(prefers-color-scheme: dark)'
+        ).matches;
+
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          html.classList.add('dark');
+        } else {
+          html.classList.remove('dark');
+        }
+
+        if (toggle) {
+          toggle.addEventListener('click', function () {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            localStorage.setItem('vlab-theme', isDark ? 'dark' : 'light');
+          });
+        }
+      })();
+    </script>
+
+    {% block scripts %}{% endblock scripts %}
+  </body>
+</html>
