@@ -15,5 +15,16 @@ class Config:
     PROJECT_ROOT = os.path.abspath(os.path.join(APP_DIR, os.pardir))
     MAX_CONTENT_LENGTH = 24 * 1024 * 1024  # 24 megabytes (file size restriction)
 
+    # -- Databases --
+    # Single-URI strings so the database layer owns parsing.
+    DATABASE_URI = os.getenv(
+        "DATABASE_URI",
+        "mysql+pymysql://vlab:vlab@localhost:3306/vlab",
+    )
+    MONGODB_URI = os.getenv(
+        "MONGODB_URI",
+        "mongodb://localhost:27017/vlab",
+    )
+
 
 config = Config()
