@@ -19,7 +19,7 @@ class Config:
     # Single-URI strings so the database layer owns parsing.
     DATABASE_URI = os.getenv(
         "DATABASE_URI",
-        "mysql+pymysql://vlab:vlab@localhost:3306/vlab",
+        "postgresql+psycopg2://vlab:vlab@localhost:5432/vlab",
     )
     MONGODB_URI = os.getenv(
         "MONGODB_URI",

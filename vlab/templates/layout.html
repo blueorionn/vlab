@@ -87,6 +87,34 @@
           </li>
         </ul>
 
+        <!-- Auth Links -->
+        <div class="hidden items-center gap-3 sm:flex">
+          {% if current_user %}
+            <span class="text-sm text-slate-500 dark:text-slate-400">
+              {{ current_user.username }}
+            </span>
+            <a
+              href="{{ url_for('auth.logout') }}"
+              class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:border-red-300 hover:text-red-600 dark:border-slate-700 dark:text-slate-400 dark:hover:border-red-700 dark:hover:text-red-400"
+            >
+              Log out
+            </a>
+          {% else %}
+            <a
+              href="{{ url_for('auth.login') }}"
+              class="text-sm font-medium text-slate-600 transition-colors hover:text-[var(--clr-bs-green)] dark:text-slate-400 dark:hover:text-[var(--clr-bs-green)]"
+            >
+              Log in
+            </a>
+            <a
+              href="{{ url_for('auth.signup') }}"
+              class="rounded-lg bg-[var(--clr-bs-green)] px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[var(--clr-bs-green)]/90"
+            >
+              Sign up
+            </a>
+          {% endif %}
+        </div>
+
         <!-- Dark Mode Toggle (placeholder) -->
         <button
           type="button"
