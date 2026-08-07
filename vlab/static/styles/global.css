@@ -107,8 +107,7 @@ img {
 /* ===== Code Blocks (for articles/labs) ===== */
 code,
 pre {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Source Code Pro',
-    Menlo, Consolas, monospace;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
 }
 
 code {
@@ -179,10 +178,18 @@ pre code {
   color: #f1f5f9;
 }
 
-.prose h1 { font-size: 2rem; }
-.prose h2 { font-size: 1.5rem; }
-.prose h3 { font-size: 1.25rem; }
-.prose h4 { font-size: 1.1rem; }
+.prose h1 {
+  font-size: 2rem;
+}
+.prose h2 {
+  font-size: 1.5rem;
+}
+.prose h3 {
+  font-size: 1.25rem;
+}
+.prose h4 {
+  font-size: 1.1rem;
+}
 
 .prose p {
   margin-bottom: 1em;

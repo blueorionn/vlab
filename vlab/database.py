@@ -100,8 +100,8 @@ def _init_sqlalchemy(app) -> None:
 
     _engine = create_engine(
         uri,
-        pool_pre_ping=True,          # detect stale connections
-        pool_recycle=3600,           # recycle hourly (safe under MySQL wait_timeout)
+        pool_pre_ping=True,  # detect stale connections
+        pool_recycle=3600,  # recycle hourly (safe under MySQL wait_timeout)
         echo=app.config.get("DEBUG", False),
     )
     _Session = scoped_session(

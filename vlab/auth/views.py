@@ -77,7 +77,9 @@ def login():
         password = request.form.get("password") or ""
 
         if not login_id or not password:
-            flash("Please provide both login (email or username) and password.", "error")
+            flash(
+                "Please provide both login (email or username) and password.", "error"
+            )
             return render_template("auth/login.html"), 400
 
         # Accept email *or* username.
